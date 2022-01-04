@@ -19,9 +19,9 @@ func CreateOutletDaoImpl(db *sql.DB) dao.OutletDao {
 
 // insert outlet
 func (dao *outletDaoImpl) Insert(ctx context.Context, outlet *model.Outlets) (int64, error) {
-	query := `INSERT INTO outlets(merchant_id,outlet_name,created_by,updated_by)`
+	query := `INSERT INTO outlets(merchant_id,outlet_name,created_by,updated_by) VALUES(?,?,?,?)`
 
-	stmt, err := dao.DB.ExecContext(ctx, query, outlet.MerchantId, outlet.OutletName, outlet.CreatedBy, outlet.UpdatedAt)
+	stmt, err := dao.DB.ExecContext(ctx, query, outlet.MerchantId, outlet.OutletName, outlet.CreatedBy, outlet.UpdatedBy)
 	if err != nil {
 		return 0, err
 	}

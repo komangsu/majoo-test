@@ -41,7 +41,7 @@ func _TestUserInsert(t *testing.T) {
 }
 
 // update user
-func TestUpdateUser(t *testing.T) {
+func _TestUpdateUser(t *testing.T) {
 	ctx := context.Background()
 	db := CreateUserDaoImpl(backeendmajootest.Connection())
 
@@ -61,7 +61,7 @@ func TestUpdateUser(t *testing.T) {
 }
 
 // find by id
-func TestFindByIdUser(t *testing.T) {
+func _TestFindByIdUser(t *testing.T) {
 	ctx := context.Background()
 	db := CreateUserDaoImpl(backeendmajootest.Connection())
 
@@ -75,7 +75,7 @@ func TestFindByIdUser(t *testing.T) {
 }
 
 // find all user
-func TestGetAllUser(t *testing.T) {
+func _TestGetAllUser(t *testing.T) {
 	ctx := context.Background()
 	db := CreateUserDaoImpl(backeendmajootest.Connection())
 
@@ -87,7 +87,7 @@ func TestGetAllUser(t *testing.T) {
 }
 
 // delete user
-func TestDeleteUser(t *testing.T) {
+func _TestDeleteUser(t *testing.T) {
 	ctx := context.Background()
 	db := CreateUserDaoImpl(backeendmajootest.Connection())
 

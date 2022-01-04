@@ -36,9 +36,10 @@ func (dao *merchantDaoImpl) Insert(ctx context.Context, merchant *model.Merchant
 
 // update merchant
 func (dao *merchantDaoImpl) Update(ctx context.Context, id int64, merchant model.Merchants) (model.Merchants, error) {
-	query := `UPDATE merchants set user_id = ?, merchant_name = ?,created_by = ?,updated_by = ? WHERE id = ?`
+	query := `UPDATE merchants set user_id = ?, merchant_name = ?,created_by = ?,updated_at = ?,updated_by = ? WHERE id = ?`
 
-	_, err := dao.DB.ExecContext(ctx, query, merchant.UserId, merchant.MerchantName, merchant.CreatedBy, merchant.UpdatedBy, id)
+	_, err := dao.DB.ExecContext(ctx, query, merchant.UserId, merchant.MerchantName, merchant.CreatedBy, merchant.UpdatedAt,
+		merchant.UpdatedBy, id)
 	if err != nil {
 		panic(err)
 	}
